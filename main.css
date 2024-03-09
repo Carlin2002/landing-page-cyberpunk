@@ -1,0 +1,227 @@
+@font-face {
+    font-family: cyberpunk;
+    src: url(./fonts/Cyberpunk.ttf);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+#hero{
+    max-width: 1920px;
+    min-height: 800px;
+    background-image: url(https://www.cyberpunk.net/build/images/edgerunners/phase2/cover-desktop@1x-e6d6aaa1.jpg);
+    background-position: center top;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    align-items: center;
+    font-family: cyberpunk;
+}
+
+nav .link-nao-btn {
+    color: #fcf404;
+    text-decoration: none;
+    position: relative;
+}
+
+nav a::before{
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    width: 0%;
+    height: 2px;
+    background-color: #fcf404;
+    transition: all .3s;
+}
+
+nav a:hover::before {
+    width: 100%;
+}
+
+.logo {
+    width: 480px;
+}
+
+.nav-itens {
+    display: flex;
+    list-style: none;
+}
+
+li {
+    font-size: 22px;
+    margin-right: 40px;
+}
+
+.btn-netflix {
+    background-color: #000;
+    padding-top: 2px;
+    border-radius: 6px;
+    width: 115px;
+    height: 44px;
+    transition: ease-out 0.3s;
+    outline: none;
+    position: relative;
+    z-index: 1;
+}
+
+.btn-netflix img {
+    max-width: 100%;
+}
+
+.btn-netflix:before {
+    transition: 0.5s all ease;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    opacity: 0;
+    content: '';
+    background-color: #fff;
+    border-radius: 6px;
+}
+
+.btn-netflix:hover:before {
+    transition: 0.5s all ease;
+    left: 0;
+    right: 0;
+    opacity: 1;
+    z-index: -1;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3 ease-in-out;
+    background-color: white;
+}
+
+.container {
+    max-width: 90px;
+    margin: 33vh auto;
+}
+
+.btn-play {
+    width: 90px;
+    height: 70px;
+    background-color: #45ed1f;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    border-radius: 6px;
+}
+
+.btn-play:hover {
+    background-color: #6cfce2;
+}
+
+.btn-play img {
+    padding-top: 12px;
+    max-height: 80%;
+}
+
+.responsive-span {
+    display: none;
+}
+
+#detalhes {
+    padding: 20px;
+    background-color: #fcf404;
+    color: #000;
+    font-family: BlenderProBold,sans-serif;
+    font-size: 20px;
+    letter-spacing: -.01em;
+    line-height: 40px;
+    text-align: center;
+    width: 100%;
+}
+
+@media screen and (min-width: 0px) and (max-width: 980px) {
+    .logo {
+        display: none;
+    }
+
+    nav {
+        justify-content: space-evenly;
+    }
+
+    nav a {
+        font-size: 30px;
+        font-weight: bold;
+    }
+
+    li {
+        margin-right: 16px;
+        margin-left: 16px;
+    }
+
+    .btn-netflix {
+        width: 120px;
+        height: 44px;
+    }
+
+    .responsive-span {
+        display: block;
+        text-align: center;
+    }
+
+    .responsive-span img {
+        width: 600px;
+    }
+
+    .container {
+        margin-bottom: 150px;
+    }
+
+}
+
+@media screen and (min-width: 0px) and (max-width: 720px) {
+    .logo {
+        display: none;
+    }
+
+    nav {
+        justify-content: space-evenly;
+    }
+
+    nav a {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    li {
+        margin-right: 12px;
+    }
+
+    .btn-netflix {
+        width: 100px;
+        height: 38px;
+    }
+
+    .responsive-span {
+        display: block;
+        text-align: center;
+    }
+
+    .responsive-span img {
+        width: 600px;
+    }
+
+    .container {
+        margin-bottom: 150px;
+    }
+}
