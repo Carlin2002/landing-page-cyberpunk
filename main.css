@@ -3,6 +3,10 @@
     src: url(./fonts/Cyberpunk.ttf);
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -10,12 +14,16 @@
 }
 
 body {
-    width: 100%;
     overflow-x: hidden;
+    background-color: #fcf404;;
+}
+
+.container {
+    max-width: 1920px;
+    margin: 0 auto;
 }
 
 #hero{
-    max-width: 1920px;
     min-height: 800px;
     background-image: url(https://www.cyberpunk.net/build/images/edgerunners/phase2/cover-desktop@1x-e6d6aaa1.jpg);
     background-position: center top;
@@ -24,6 +32,7 @@ body {
 nav {
     display: flex;
     justify-content: space-between;
+    position: relative;
     padding-top: 10px;
     align-items: center;
     font-family: cyberpunk;
@@ -35,7 +44,7 @@ nav .link-nao-btn {
     position: relative;
 }
 
-nav a::before{
+.link-nao-btn::before{
     content: '';
     position: absolute;
     bottom: -5px;
@@ -45,7 +54,7 @@ nav a::before{
     transition: all .3s;
 }
 
-nav a:hover::before {
+.link-nao-btn:hover::before {
     width: 100%;
 }
 
@@ -110,7 +119,7 @@ li {
     background-color: white;
 }
 
-.container {
+.container-play {
     max-width: 90px;
     margin: 33vh auto;
 }
@@ -139,7 +148,7 @@ li {
 }
 
 #detalhes {
-    padding: 20px;
+    padding: 20px 20px 0 20px;
     background-color: #fcf404;
     color: #000;
     font-family: BlenderProBold,sans-serif;
@@ -150,9 +159,60 @@ li {
     width: 100%;
 }
 
-@media screen and (min-width: 0px) and (max-width: 980px) {
+.disponivel-netflix {
+    padding-top: 20px;
+    font-size: 25px;
+}
+
+.disponivel-netflix img {
+    padding-top: 4px;
+}
+
+.separador img {
+    width: 100%;
+    padding-bottom: 120px;
+}
+
+#sobre {
+    text-align: center;
+    font-family: BlenderProBold,sans-serif;
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+#sobre img {
+    max-width: 45%;
+    position: relative;
+}
+
+.images {
+    position: relative;
+    padding-top: 34px;
+    padding-bottom: 90px;
+}
+
+.img-synop1 {
+    position: absolute;
+    top: 0px;
+    left: 80px;
+    z-index: 1;
+}
+
+.img-synop2 {
+    position: absolute;
+    top: 60px;
+    left: -80px;
+    z-index: 0;
+}
+
+
+@media screen and (min-width: 720px) and (max-width: 980px) {
     .logo {
         display: none;
+    }
+
+    #hero{
+        min-height: 400px;
     }
 
     nav {
@@ -184,14 +244,27 @@ li {
     }
 
     .container {
-        margin-bottom: 150px;
+        max-height: 700px;
+    }
+
+    .container-play {
+        margin: 23vh auto;
+    }
+
+    #sobre {
+        font-size: 14px;
     }
 
 }
 
-@media screen and (min-width: 0px) and (max-width: 720px) {
+@media screen and (min-width: 0px) and (max-width: 719px) {
+
     .logo {
         display: none;
+    }
+
+    #hero{
+        min-height: 100px;
     }
 
     nav {
@@ -218,10 +291,36 @@ li {
     }
 
     .responsive-span img {
-        width: 600px;
+        width: 450px;
     }
 
     .container {
-        margin-bottom: 150px;
+        margin-bottom: 10px;
+    }
+
+    #sobre {
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+    .container-play {
+        margin: 22vh auto;
+    }
+
+    .separador img {
+        padding-bottom: 40px;
+    }
+
+    #detalhes{
+        padding-top: 10px;
+    }
+    
+    .disponivel-netflix {
+        font-size: 18px;
+        padding-top: 0px;
+    }
+
+    .disponivel-netflix img {
+        max-width: 160px;
     }
 }
